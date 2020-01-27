@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --mainWhiteColor: #fff;
+  --mainColorTransparant: transparent;
+  --mainColorBlackRgba: rgba(0, 0, 0, 0.7);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: url('./background-img.jpg') center/cover no-repeat fixed;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container {
+  height: 100vh;
+  max-width: 1750px;
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.row {
+  background-color: var(--mainColorBlackRgba);
+  color: var(--mainWhiteColor);
+  width: 60vw;
+  max-width: 700px;
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 3px solid var(--mainWhiteColor);
+  border-radius: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.row h1 {
+  font-size: 7rem;
+}
+.row h2 {
+  font-size: 4rem;
+}
+.container-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  width: 200px;
+  height: 60px;
+  margin: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: transparent;
+  color: var(--mainWhiteColor);
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border: 3px solid var(--mainWhiteColor);
+  position: relative;
+  cursor: pointer;
+}
+.btn::before,
+.btn::after {
+  content: '';
+  height: 4px;
+  width: 30px;
+  background-color: var(--mainColorBlackRgba);
+  position: absolute;
+  transition: 0.4s linear;
+  transform: skew(40deg);
+}
+.btn::before {
+  top: -3px;
+  left: 10%;
+}
+.btn::after {
+  bottom: -3px;
+  right: 10%;
+}
+.btn:hover::before {
+  left: 70%;
+}
+.btn:hover::after {
+  right: 70%;
+}
+@media screen and (max-width: 500px) {
+  .btn {
+    width: 150px;
   }
 }
