@@ -21,6 +21,7 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 .row {
   background-color: var(--mainColorBlackRgba);
@@ -93,5 +94,17 @@ body {
   }
   .row h1 {
     font-size: 5rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  #increase {
+    order: 1;
+  }
+  #decrease {
+    order: 2;
+  }
+
+  #reset {
+    order: 3;
   }
 }
